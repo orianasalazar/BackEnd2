@@ -1,13 +1,21 @@
 <div class="row">
+
     <h1>Hard & Soft Skills </h1>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+
+    <div class="col-lg-2">
+        <button type="button" routerLink="/newskill" class="btn btn-primary" *ngIf="isLogged">Nueva skill</button>
+    </div>
+
+     <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill" > 
         <circle-progress
-            [percent]="90"
+            [percent]="(skill.porcentaje)"
             [radius]="85"
             [titleFontSize]="'2em'"
             [showSubtitle]="false"
             [showUnits]="false"
-            [title]="'HTML'"
+            [showTitle]="true"
+            [title]="(skill.nombre)"
+            [titleColor]="'#212F3C'"
             [outerStrokeWidth]="10"
             [innerStrokeWidth]="2"
             [outerStrokeColor]="'brown'"
@@ -15,90 +23,18 @@
             [animation]="true"
             [animationDuration]="600"
         ></circle-progress>
+        <div>
+            
+            <td *ngIf="isLogged">
+                <button class="btn btn-dark" routerLink="/editskill/{{skill.id}}">
+                    <i class="bi bi-pencil"></i></button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="delete(skill.id)">
+                    <i class="bi bi-trash"></i></button>
+            </td>
+        </div>
     </div>
 
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="90"
-            [radius]="85"
-            [titleFontSize]="'2em'"
-            [showSubtitle]="false"
-            [showUnits]="false"
-            [title]="'CSS'"
-            [outerStrokeWidth]="10"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'brown'"
-            [innerStrokeColor]="'burlywood'"
-            [animation]="true"
-            [animationDuration]="600"
-        ></circle-progress>
-    </div>
 
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="70"
-            [radius]="85"
-            [titleFontSize]="'2em'"
-            [showSubtitle]="false"
-            [showUnits]="false"
-            [title]="'JavaScript'"
-            [outerStrokeWidth]="10"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'brown'"
-            [innerStrokeColor]="'burlywood'"
-            [animation]="true"
-            [animationDuration]="600"
-        ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="50"
-            [radius]="85"
-            [titleFontSize]="'2em'"
-            [showSubtitle]="false"
-            [showUnits]="false"
-            [title]="'GitHub'"
-            [outerStrokeWidth]="10"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'brown'"
-            [innerStrokeColor]="'burlywood'"
-            [animation]="true"
-            [animationDuration]="600"
-        ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="70"
-            [radius]="85"
-            [titleFontSize]="'2em'"
-            [showSubtitle]="false"
-            [showUnits]="false"
-            [title]="'Ingles'"
-            [outerStrokeWidth]="10"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'brown'"
-            [innerStrokeColor]="'burlywood'"
-            [animation]="true"
-            [animationDuration]="600"
-        ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="100"
-            [radius]="85"
-            [titleFontSize]="'20px'"
-            [showSubtitle]="false"
-            [showUnits]="false"
-            [title]="'Compañerismo'"
-            [outerStrokeWidth]="10"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'brown'"
-            [innerStrokeColor]="'burlywood'"
-            [animation]="true"
-            [animationDuration]="600"
-        ></circle-progress>
-    </div>
 </div>

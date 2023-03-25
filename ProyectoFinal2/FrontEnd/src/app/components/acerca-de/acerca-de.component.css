@@ -6,16 +6,24 @@ div{
   
 }
 
+
 /*Estilo de la foto de perfil*/
 @media (min-width:576px){
     #fotodeperfil{
-        position: absolute;
-        width: 20%;
         border-radius: 20%;
         box-shadow: 2px 2px 2px brown;
-        left: 3%;
-        top: 600px;
         
+    }
+    .descripcion{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
     }
 }
 @media (max-width:575px){
@@ -27,6 +35,7 @@ div{
         left: 33%;
         top: 800px;
     }
+
 }
 
 @media (max-width:575px){
@@ -59,3 +68,4 @@ div{
         text-align: center;
     }
 }
+

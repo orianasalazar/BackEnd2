@@ -1,4 +1,3 @@
-import { ImplicitReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
 import { SExperienciaService } from 'src/app/service/s-experiencia.service';
@@ -9,29 +8,30 @@ import { TokenService } from 'src/app/service/token.service';
   templateUrl: './experiencia.component.html',
   styleUrls: ['./experiencia.component.css']
 })
-export class ExperienciaComponent implements OnInit{
+export class ExperienciaComponent implements OnInit {
   expe: Experiencia[] = [];
 
-  constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService){ }
+  constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) { }
 
   isLogged = false;
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.cargarExperiencia();
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()) {
       this.isLogged = true;
-    }else{
+    } else {
       this.isLogged = false;
     }
   }
-  cargarExperiencia():void{
-    this.sExperiencia.lista().subscribe(data => {this.expe = data;})
+
+  cargarExperiencia(): void {
+    this.sExperiencia.lista().subscribe(data => { this.expe = data; })
   }
 
   delete(id?: number){
     if(id != undefined){
       this.sExperiencia.delete(id).subscribe(
-        data =>{ 
+        data => {
           this.cargarExperiencia();
         }, err => {
           alert("No se pudo borrar la experiencia");
