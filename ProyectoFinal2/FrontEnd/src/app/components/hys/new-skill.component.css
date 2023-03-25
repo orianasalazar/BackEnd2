@@ -1,0 +1,11 @@
+body{
+    background-color: brown;
+    color: antiquewhite;
+}
+button{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+form{
+    margin-top: 40px;
+}
