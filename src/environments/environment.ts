@@ -10,7 +10,7 @@ export const environment = {
     locationId: 'southamerica-east1',
     apiKey: 'AIzaSyC6qJRmzRu7Gn74ZAvUR4VRuGvm-2auh9E',
     authDomain: 'frontend-bafe5.firebaseapp.com',
-    messagingSenderId: '777822658477',
+    messagingSenderId: '777822658477'
   },
 
     production: false,
